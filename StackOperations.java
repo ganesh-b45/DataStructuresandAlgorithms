@@ -1,6 +1,3 @@
-
-package concepts;
-
 import java.util.EmptyStackException;
 
 public class StackOperations {
