@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 public class ListToMapExample {
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
-                new Employee("Alice", 50000),
+                new Employee("Alicec", 50000),
                 new Employee("Bob", 60000),
                 new Employee("Charlie", 40000)
         );
