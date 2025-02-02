@@ -1,59 +1,46 @@
-class LinkedList
-{
+class LinkedList {
     private Node head;
     private Node tail;
     private int size;
-
     public LinkedList() {
-        this.size= 0;
+        this.size = 0;
     }
 
 
-
-
-
-
-    public void insertFirst(int value)
-    {
+    public void insertFirst(int value) {
         Node node = new Node(value);
-        node.next= head;
+        node.next = head;
         head = node;
 
-        if(tail == null)
-        {
+        if (tail == null) {
             tail = head;
         }
-        size ++;
-    }
-
-    public void insertLast(int value)
-    {
-        if(tail == null)
-        {
-            insertFirst(value);
-            return;
-        }
-        Node node = new Node(value);
-        tail.next= node;
-        tail= node;
         size++;
     }
 
-    public void insert(int value, int index)
-    {
-        if(index == 0)
-        {
+    public void insertLast(int value) {
+        if (tail == null) {
             insertFirst(value);
             return;
         }
-        if(index == size)
-        {
+        Node node = new Node(value);
+        tail.next = node;
+        tail = node;
+        size++;
+    }
+
+    public void insert(int value, int index) {
+        if (index == 0) {
+            insertFirst(value);
+            return;
+        }
+        if (index == size) {
             insertLast(value);
+            return;
         }
 
-        Node temp= head;
-        for(int i =1;i < index; i++)
-        {
+        Node temp = head;
+        for (int i = 1; i < index; i++) {
             temp = temp.next;
         }
 
@@ -63,18 +50,50 @@ class LinkedList
         size++;
     }
 
-    public void display()
+    public int deleteFirst()
     {
+        int value= head.value;
+        head= head.next;
+        if (head == null)
+        {
+            tail = null;
+        }
+        size--;
+        return value;
+    }
+
+    public Node get(int index)
+    {
+        Node node= head;
+        for (int i=0; i<index;i++)
+        {
+            node=node.next;
+        }
+        return node;
+    }
+
+    public int deleteLast()
+    {
+        if(size <= 1)
+        {
+            return deleteFirst();
+        }
+        int value= tail.value;
+        Node secondLast=get(size-2);
+        tail.next=null;
+        size--;
+        return value;
+    }
+    public void display() {
         Node temp = head;
 
-        while (temp != null)
-        {
+        while (temp != null) {
             System.out.println(temp.value);
             temp = temp.next;
         }
     }
-    class Node
-    {
+
+    class Node {
         private int value;
         private Node next;
 
@@ -88,6 +107,7 @@ class LinkedList
         }
     }
 }
+
 public class LinkedListInsertFirst {
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
@@ -96,8 +116,12 @@ public class LinkedListInsertFirst {
         obj.insertFirst(11);
         obj.insertFirst(25);
         obj.insertLast(26);
-        obj.insert(1, 3);
+        obj.insert(1, 2);
         obj.display();
+        int val=obj.deleteFirst();
+        System.out.print("Deleted Value :" + val);
+        obj.display();
+        System.out.println("last deleted:"+obj.deleteLast());
 
     }
 }
