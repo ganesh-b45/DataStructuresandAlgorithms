@@ -1,7 +1,8 @@
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class FibbonaciRecursion {
     int f1 = 0, f2 = 1, fib = 0;
+
     public void fib(int n) {
         if (n >= 1) {
             fib = f1 + f2;
@@ -11,6 +12,7 @@ public class FibbonaciRecursion {
             fib(n - 1);
         }
     }
+
     public static void main(String[] args) {
 
         FibbonaciRecursion obj = new FibbonaciRecursion();
