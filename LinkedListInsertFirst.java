@@ -1,3 +1,5 @@
+import static java.lang.System.*;
+
 class LinkedList {
     private Node head;
     private Node tail;
@@ -88,7 +90,7 @@ class LinkedList {
         Node temp = head;
 
         while (temp != null) {
-            System.out.println(temp.value);
+            out.println(temp.value);
             temp = temp.next;
         }
     }
@@ -119,9 +121,9 @@ public class LinkedListInsertFirst {
         obj.insert(1, 2);
         obj.display();
         int val=obj.deleteFirst();
-        System.out.print("Deleted Value :" + val);
+        out.print("Deleted Value :" + val);
         obj.display();
-        System.out.println("last deleted:"+obj.deleteLast());
+        out.println("last deleted:"+obj.deleteLast());
 
     }
 }
