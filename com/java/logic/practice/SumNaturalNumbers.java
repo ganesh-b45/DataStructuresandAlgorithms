@@ -11,6 +11,8 @@ public class SumNaturalNumbers {
         }
     }
     public static void main(String[] args) {
+        int a;
+
         sum(5, 0); // Initial call with starting summ as 0
     }
 }
