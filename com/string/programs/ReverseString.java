@@ -19,7 +19,7 @@ public class ReverseString {
         }
         System.out.println("\n"+rev);
 
-        String s3 = "Ganesh";
+        String s3 = "madam";
         char ch[] = s3.toCharArray();
         int l = ch.length-1;
         for (int i = 0; i < ch.length/2; i++) {
@@ -30,6 +30,7 @@ public class ReverseString {
         }
         String CharArrayToStr = new String(ch);
         System.out.println("\n"+ CharArrayToStr);
+        System.out.println(CharArrayToStr.equalsIgnoreCase(s3));
 
 
 
